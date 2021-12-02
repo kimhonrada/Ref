@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/kimhonrada/hr-rfe6-mvp/issues"
   },
-  "homepage": "https://github.com/kimhonrada/hr-rfe6-mvp#readme"
+  "homepage": "https://github.com/kimhonrada/hr-rfe6-mvp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^17.1.0",
+    "nodemon": "^2.0.15",
+    "psql": "^0.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
