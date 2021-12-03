@@ -1,9 +1,19 @@
 import React from 'react';
+import axios from 'axios';
 
 const Food = (props) => {
 
   const eatFood = (e) => {
-    console.log(`you clicked this ${e.target.alt}`)
+    axios.delete('/food', {
+      data: {
+        name: e.target.alt
+      }
+    })
+      .then((result) => {
+        console.log('deleted')
+      }).catch((err) => {
+        console.log(err)
+      });
   }
 
   const foodBlocks = props.food.map((food) =>
