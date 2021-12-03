@@ -1,4 +1,5 @@
 import React from 'react';
+import "./fridge.css";
 
 class Fridge extends React.Component {
   constructor(props) {
@@ -6,15 +7,18 @@ class Fridge extends React.Component {
     this.state = {
       toggle: true
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log('you clicked me')
   }
 
   render() {
     return (
       <React.Fragment>
-        <div className='fridgeDoor'>
-          fridge door
+        <div className='fridgeDoor' onClick={this.handleClick}>
           <div className='fridgeBody'>
-            fridge body
           </div>
         </div>
       </React.Fragment>
