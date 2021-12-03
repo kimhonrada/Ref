@@ -29,6 +29,7 @@
     rotateY(-105deg);
 }
 .fridgeBody {
+  margin-top: 100px;
   background-color: white;
   position: relative;
   width: 350px;
