@@ -16,13 +16,12 @@ class App extends React.Component {
   }
 
   getFood() {
-    console.log('im getting food')
-    // axios.get("/food")
-    //   .then((result) => {
-    //     console.log('this is the result in app.jsx ', result)
-    //   }).catch((err) => {
-    //     console.log(err)
-    //   });
+    axios.get("/food")
+      .then((result) => {
+        console.log('this is the result in app.jsx ', result)
+      }).catch((err) => {
+        console.log(err)
+      });
   }
 
 
