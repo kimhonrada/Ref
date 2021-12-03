@@ -1,11 +1,12 @@
 import React from 'react';
+import axios from 'axios';
 
 class Modal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      foodName: '',
-      foodUrl: ''
+      name: '',
+      picture: ''
     }
     this.addFood = this.addFood.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -14,15 +15,25 @@ class Modal extends React.Component {
 
   addFood() {
     // this.props.closeList();
+    axios.post('/food', {
+      name: this.state.name,
+      picture: this.state.picture
+    })
+      .then((result) => {
+        this.props.closeList();
+        console.log('success posting')
+      }).catch((err) => {
+        alert(`dang! you still have ${this.state.name} in the fridge!`)
+        this.props.closeList();
+      });
   }
 
   handleSubmit(e) {
-    this.props.closeList();
     e.preventDefault();
+    this.addFood()
   }
 
   handleChange(e) {
-    // console.log(e.target.name, e.target.value)
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -33,8 +44,8 @@ class Modal extends React.Component {
       return (
         <div className="modal">
           <form className="modal-content" onSubmit={this.handleSubmit}>
-            <input type="text" className="foodName" name='foodName' onChange={this.handleChange} />
-            <input type="text" className="foodUrl" name='foodUrl' onChange={this.handleChange} />
+            <input type="text" className="foodName" name='name' onChange={this.handleChange} required />
+            <input type="url" className="foodUrl" name='picture' onChange={this.handleChange} required />
             <button type="submit" className="modal-button" onClick={(e) => { this.handleSubmit(e) }}>Go shop!</button>
           </form>
         </div>
