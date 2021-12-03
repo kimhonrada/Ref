@@ -39,7 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <button className="go-shopping" onClick={this.goShop}> Let's go shopping!</button>
+        <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <Modal show={this.state.show} closeList={this.goShop} />
       </React.Fragment>
