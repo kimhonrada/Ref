@@ -15,13 +15,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getFood();
+    // this.getFood();
   }
 
   getFood() {
     axios.get("/food")
       .then((result) => {
-        this.setState({ food: result.data })
+        this.setState({ food: result.data.slice(0, (Math.floor(Math.random() * (9 - 0 + 1) + 0))) })
       }).catch((err) => {
         console.log(err)
       });
