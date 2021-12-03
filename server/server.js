@@ -13,7 +13,16 @@ app.use(express.static("dist"));
 
 // get food
 app.get("/food", (req, res) => {
-  res.send(food);
+  getFood()
+    .then((result) => {
+      res.status(200).send(result.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res
+        .status(404)
+        .send(`stop, youre breaking it! you got this error ${err}`);
+    });
 });
 
 // add food

@@ -10,7 +10,12 @@ const pool = new Pool({
 pool.connect();
 
 const getFood = () => {
-  return pool.query();
+  return pool.query(
+    `SELECT *
+      FROM food
+      ORDER BY RANDOM()
+      LIMIT 9;`
+  );
 };
 
 const addFood = ({ name, picture }) => {
