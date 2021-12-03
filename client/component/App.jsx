@@ -28,7 +28,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <Fridge getFood={this.getFood} food={this.state.food} />
+      <React.Fragment>
+        <Fridge getFood={this.getFood} food={this.state.food} />
+      </React.Fragment>
     )
   }
 }
