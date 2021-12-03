@@ -5,19 +5,23 @@ class Fridge extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      toggle: true
+      style: 'fridgeDoor'
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    console.log('you clicked me')
+    if (this.state.style === 'fridgeDoor') {
+      this.setState({ style: "doorOpen" })
+    } else {
+      this.setState({ style: "fridgeDoor" })
+    }
   }
 
   render() {
     return (
       <React.Fragment>
-        <div className='fridgeDoor' onClick={this.handleClick}>
+        <div className={this.state.style} onClick={this.handleClick}>
           <div className='fridgeBody'>
           </div>
         </div>
