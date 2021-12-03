@@ -6,8 +6,8 @@ const Modal = () => {
       <div className="modal-content">
         <input type="text" className="foodName" />
         <input type="text" className="foodUrl" />
+        <button className="modal-button" onClick={() => { console.log('yes') }}>Go shop!</button>
       </div>
-      <button className="shop">Go shop!</button>
     </div>
   )
 }
