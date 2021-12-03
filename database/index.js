@@ -33,13 +33,13 @@ const addFood = ({ name, picture }) => {
 };
 
 const eatFood = ({ name }) => {
-  return pool.query(
-    `DELETE FROM
-    food
-    WHERE
-    name='${name}'
-    `
-  );
+  // return pool.query(
+  //   `DELETE FROM
+  //   food
+  //   WHERE
+  //   name='${name}'
+  //   `
+  // );
 };
 
 module.exports = {

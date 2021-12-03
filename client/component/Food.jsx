@@ -10,7 +10,7 @@ const Food = (props) => {
       }
     })
       .then((result) => {
-        console.log('deleted')
+        props.closeFridge()
       }).catch((err) => {
         console.log(err)
       });
