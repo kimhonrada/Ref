@@ -1,4 +1,5 @@
 import React from 'react';
+import Food from './Food.jsx'
 import "./fridge.css";
 
 class Fridge extends React.Component {
@@ -24,7 +25,9 @@ class Fridge extends React.Component {
       <React.Fragment>
         <div className="kitchen">
           <div className='fridgeBody'>
+            <Food />
             <div className={this.state.style} onClick={this.handleClick}>
+              <h3>FRIDGE</h3>
             </div>
           </div>
         </div>
