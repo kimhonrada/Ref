@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Fridge from './Fridge.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +26,9 @@ class App extends React.Component {
 
 
   render() {
-    return <h1>Hello world from app.jsx</h1>
+    return (
+      <Fridge />
+    )
   }
 }
 
