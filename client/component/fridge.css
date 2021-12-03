@@ -1,21 +1,21 @@
 .fridgeBody {
-  background-color: #333;
+  background-color: white;
   position: relative;
-  width: 200px;
-  height: 300px;
-
+  width: 350px;
+  height: 600px;
+  border: 2px solid black;
   margin: 0 auto;
   margin-top: 50px;
 }
 
 .fridgeDoor {
-  background-color: brown;
+  background-color: gray;
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 200px;
-  height: 300px;
-
+  width: 350px;
+  height: 600px;
+  border: 5px solid black;
   transform-origin: left;
   /*Speed of the Door animation*/
   transition: all 1s ease-in-out;
@@ -23,13 +23,13 @@
 
 .doorOpen {
   /*prespectiv creates the door open effect*/
-  background-color: brown;
+  background-color: gray;
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 200px;
-  height: 300px;
-
+  width: 350px;
+  height: 600px;
+  border: 5px solid black;
   transform-origin: left;
   /*Speed of the Door animation*/
   transition: all 1s ease-in-out;
