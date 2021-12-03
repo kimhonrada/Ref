@@ -49,6 +49,8 @@ body {
   border: 0px none;
   text-align: left;
   font-size: 24px;
+  height: 50px;
+  margin-top: 20px;
 }
 
 .foodName {
@@ -57,12 +59,12 @@ body {
   border: 0px none;
   background-color: transparent;
   margin-bottom: 6px;
-  margin-left: 5px;
+  margin-right: 10px;
 }
 
 .foodUrl {
   margin-top: 3px;
-  margin-left: 35px;
+  margin-right: 15px;
   grid-column: 2/3;
   grid-row: 3/4;
   border: 0px none;
