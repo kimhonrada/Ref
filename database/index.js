@@ -14,11 +14,12 @@ const getFood = () => {
 };
 
 const addFood = ({ name, picture }) => {
+  console.log(name, picture);
   return pool.query(
     `INSERT INTO
-      food(id, name, picture)
+      food(name, picture)
     VALUES
-      (nextval('food_id_seq'), ${name}, ${picture})
+      ('${name}', '${picture}')
     `
   );
 };
