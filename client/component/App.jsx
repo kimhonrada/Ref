@@ -16,18 +16,19 @@ class App extends React.Component {
   }
 
   getFood() {
-    axios.get("/food")
-      .then((result) => {
-        console.log('this is the result in app.jsx ', result)
-      }).catch((err) => {
-        console.log(err)
-      });
+    console.log('im getting food')
+    // axios.get("/food")
+    //   .then((result) => {
+    //     console.log('this is the result in app.jsx ', result)
+    //   }).catch((err) => {
+    //     console.log(err)
+    //   });
   }
 
 
   render() {
     return (
-      <Fridge />
+      <Fridge getFood={this.getFood} />
     )
   }
 }

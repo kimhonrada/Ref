@@ -10,12 +10,12 @@ class Fridge extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
   handleClick() {
     if (this.state.style === 'fridgeDoor') {
       this.setState({ style: 'doorOpen' })
     } else {
       this.setState({ style: 'fridgeDoor' })
+      this.props.getFood();
     }
   }
 
