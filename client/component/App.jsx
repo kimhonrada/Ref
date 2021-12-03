@@ -18,8 +18,7 @@ class App extends React.Component {
   getFood() {
     axios.get("/food")
       .then((result) => {
-        this.setState({ food: result.data.slice(0, 9) })
-        console.log(this.state.food)
+        this.setState({ food: result.data })
       }).catch((err) => {
         console.log(err)
       });
