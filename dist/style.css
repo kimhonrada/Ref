@@ -1,6 +1,13 @@
-#app {
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
   background-image: aqua;
   background-image: url("kitchen.png");
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
