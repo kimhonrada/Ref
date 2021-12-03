@@ -7,9 +7,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      food: []
+      food: [],
+      show: false
     }
-    this.getFood = this.getFood.bind(this)
+    this.getFood = this.getFood.bind(this);
+    this.goShop = this.goShop.bind(this);
   }
 
   componentDidMount() {
@@ -25,12 +27,21 @@ class App extends React.Component {
       });
   }
 
+  goShop() {
+    if (!this.state.show) {
+      this.setState({ show: true })
+    } else {
+      this.setState({ show: false })
+    }
+  }
+
 
   render() {
     return (
       <React.Fragment>
+        <button className="go-shopping" onClick={this.goShop}> Let's go shopping!</button>
         <Fridge getFood={this.getFood} food={this.state.food} />
-        <Modal />
+        <Modal show={this.state.show} closeList={this.goShop} />
       </React.Fragment>
     )
   }
