@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const port = 3000;
+const { getFood, addFood } = require("../database/index.js");
 
 app.listen(port, () => {
   console.log(`Listening at port ${port}`);

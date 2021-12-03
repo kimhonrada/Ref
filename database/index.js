@@ -9,10 +9,21 @@ const pool = new Pool({
 
 pool.connect();
 
-const getFood() {
-  return pool.query()
-}
+const getFood = () => {
+  return pool.query();
+};
 
-module.export = {
-  getFood
-}
+const addFood = ({ name, picture }) => {
+  return pool.query(
+    `INSERT INTO
+      food(id, name, picture)
+    VALUES
+      (nextval('food_id_seq'), ${name}, ${picture})
+    `
+  );
+};
+
+module.exports = {
+  getFood,
+  addFood,
+};
