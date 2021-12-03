@@ -11,3 +11,51 @@ body {
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("handModal.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 20% 5% 5% 70%;
+  height: 600px;
+  width: 500px;
+  bottom: 0;
+  border: red 5px solid;
+}
+
+.modal-body {
+  padding: 10px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.foodName {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border: 0px none;
+  background-color: transparent;
+  margin-bottom: 6px;
+  margin-left: 5px;
+}
+
+.foodUrl {
+  margin-top: 3px;
+  margin-left: 35px;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  border: 0px none;
+  background-color: transparent;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Fridge from './Fridge.jsx'
+import Fridge from './Fridge.jsx';
+import Modal from './Modal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Fridge getFood={this.getFood} food={this.state.food} />
+        <Modal />
       </React.Fragment>
     )
   }
