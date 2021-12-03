@@ -1,11 +1,11 @@
 .fridgeDoor {
-  background-color: gray;
+  background-color: white;
   position: absolute;
   top: 0px;
   left: 0px;
   width: 350px;
   height: 600px;
-  border: 2px solid black;
+  border: 5px solid black;
   border-radius: 10px;
   transform-origin: left;
   /*Speed of the Door animation*/
@@ -14,13 +14,13 @@
 
 .doorOpen {
   /*prespectiv creates the door open effect*/
-  background-color: gray;
+  background-color: white;
   position: absolute;
   top: 0px;
   left: 0px;
   width: 350px;
   height: 600px;
-  border: 2px solid black;
+  border: 5px solid black;
   border-radius: 10px;
   transform-origin: left;
   /*Speed of the Door animation*/
