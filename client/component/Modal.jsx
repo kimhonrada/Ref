@@ -5,8 +5,8 @@ class Modal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: '',
-      picture: ''
+      name: null,
+      picture: null
     }
     this.addFood = this.addFood.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -23,7 +23,7 @@ class Modal extends React.Component {
         this.props.closeList();
         console.log('success posting')
       }).catch((err) => {
-        alert(`dang! you still have ${this.state.name} in the fridge!`)
+        alert(`dang! check yo fridge first pls.`)
         this.props.closeList();
       });
   }

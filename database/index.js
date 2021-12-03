@@ -20,6 +20,9 @@ const getFood = () => {
 
 const addFood = ({ name, picture }) => {
   console.log(name, picture);
+  if (name === null || picture === null) {
+    return;
+  }
   return pool.query(
     `INSERT INTO
       food(name, picture)
