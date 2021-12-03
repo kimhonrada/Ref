@@ -25,7 +25,7 @@ class Fridge extends React.Component {
       <React.Fragment>
         <div className="kitchen">
           <div className='fridgeBody'>
-            <Food />
+            <Food food={this.props.food} />
             <div className={this.state.style} onClick={this.handleClick}>
               <h3>FRIDGE</h3>
             </div>

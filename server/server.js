@@ -21,19 +21,19 @@ app.get("/food", (req, res) => {
 const food = [
   {
     id: 1,
-    food: "cheese",
+    name: "cheese",
     picture:
       "https://png.pngtree.com/png-clipart/20190619/original/pngtree-vector-cheese-icon-png-image_4002572.jpg",
   },
   {
     id: 2,
-    food: "milk",
+    name: "milk",
     picture:
       "https://www.vhv.rs/dpng/d/4-40732_cute-milk-carton-png-transparent-png.png",
   },
   {
     id: 3,
-    food: "meat",
+    name: "meat",
     picture:
       "https://www.clipartmax.com/png/full/132-1322825_adventurer-meat-cartoon-meat-png.png",
   },
