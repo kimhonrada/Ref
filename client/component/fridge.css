@@ -5,10 +5,11 @@
   left: 0px;
   width: 350px;
   height: 600px;
-  border: 5px solid black;
+  border: 2px solid black;
+  border-radius: 10px;
   transform-origin: left;
   /*Speed of the Door animation*/
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 .doorOpen {
@@ -19,10 +20,11 @@
   left: 0px;
   width: 350px;
   height: 600px;
-  border: 5px solid black;
+  border: 2px solid black;
+  border-radius: 10px;
   transform-origin: left;
   /*Speed of the Door animation*/
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
   transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
     rotateY(-105deg);
 }
@@ -32,6 +34,7 @@
   width: 350px;
   height: 600px;
   border: 2px solid black;
+  border-radius: 10px;
   margin: 0 auto;
   margin-top: 50px;
 
