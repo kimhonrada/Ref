@@ -18,7 +18,8 @@ class App extends React.Component {
   getFood() {
     axios.get("/food")
       .then((result) => {
-        console.log('this is the result in app.jsx ', result)
+        this.setState({ food: result.data })
+        console.log(this.state.food)
       }).catch((err) => {
         console.log(err)
       });
