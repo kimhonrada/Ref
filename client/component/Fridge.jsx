@@ -16,7 +16,9 @@ class Fridge extends React.Component {
       this.setState({ style: 'doorOpen' })
     } else {
       this.setState({ style: 'fridgeDoor' })
-      this.props.getFood();
+      setTimeout(() => {
+        this.props.getFood();
+      }, 700);
     }
   }
 
