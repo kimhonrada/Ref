@@ -28,10 +28,7 @@ class Fridge extends React.Component {
         <div className="kitchen">
           <div className='fridgeBody'>
             <Food food={this.props.food} />
-            <div className="veggies">VEGGIES</div>
-            <div className="freezer">FREEZER</div>
             <div className={this.state.style} onClick={this.handleClick}>
-              <h3>FRIDGE DOOR</h3>
             </div>
           </div>
         </div>
