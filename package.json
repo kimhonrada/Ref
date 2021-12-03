@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "build": "npx webpack build -w"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,21 @@
   },
   "homepage": "https://github.com/kimhonrada/hr-rfe6-mvp#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "express": "^4.17.1",
     "node": "^17.1.0",
     "nodemon": "^2.0.15",
     "psql": "^0.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "webpack": "^5.64.4"
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.3",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
   }
 }
