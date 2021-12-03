@@ -12,7 +12,6 @@ app.use(express.static("dist"));
 
 // get food
 app.get("/food", (req, res) => {
-  console.log(req.body);
   res.send(food);
 });
 
