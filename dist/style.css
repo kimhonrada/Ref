@@ -7,7 +7,7 @@ body {
 
 body {
   background-image: aqua;
-  background-image: url("kitchen.png");
+  background-image: url("assets/kitchen.png");
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -31,7 +31,7 @@ body {
   height: 600px;
   width: 600px;
   bottom: 0;
-  background-image: url("handModal.png");
+  background-image: url("assets/handModal.png");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -75,7 +75,7 @@ body {
 }
 
 .go-shopping {
-  background-image: url("carkeys.png");
+  background-image: url("assets/carkeys.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
