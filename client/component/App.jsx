@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Fridge from './Fridge.jsx';
-import Modal from './Modal.jsx';
+import FoodModal from './FoodModal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class App extends React.Component {
       <React.Fragment>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
-        <Modal show={this.state.show} closeList={this.goShop} />
+        <FoodModal show={this.state.show} closeList={this.goShop} />
       </React.Fragment>
     )
   }

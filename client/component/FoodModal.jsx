@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class Modal extends React.Component {
+class FoodModal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -54,4 +54,4 @@ class Modal extends React.Component {
   }
 }
 
-export default Modal;
+export default FoodModal;
