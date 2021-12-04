@@ -43,7 +43,7 @@ const eatFood = ({ name }) => {
   );
 };
 
-const addUser = ({ name }) => {
+const addPlayer = ({ name }) => {
   console.log(name);
   if (name === null) {
     return new Promise((resolve, reject) => {
@@ -52,7 +52,7 @@ const addUser = ({ name }) => {
   } else {
     return pool.query(
       `INSERT INTO
-        user(name)
+        player(name)
        VALUES
         ('${name}')
       `
@@ -64,5 +64,5 @@ module.exports = {
   getFood,
   addFood,
   eatFood,
-  addUser,
+  addPlayer,
 };

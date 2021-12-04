@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS food (
   picture varchar NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS "user" (
+CREATE TABLE IF NOT EXISTS player (
   id serial PRIMARY KEY,
   name varchar(69) NOT NULL UNIQUE,
   points integer default 0 NOT NULL
