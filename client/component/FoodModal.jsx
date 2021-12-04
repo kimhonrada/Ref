@@ -22,8 +22,16 @@ class FoodModal extends React.Component {
       .then((result) => {
         this.props.closeList();
         console.log('success posting')
+        this.setState({
+          name: null,
+          picture: null
+        })
       }).catch((err) => {
         alert(`dang! check yo fridge first pls.`)
+        this.setState({
+          name: null,
+          picture: null
+        })
         this.props.closeList();
       });
   }
@@ -42,11 +50,11 @@ class FoodModal extends React.Component {
       return null
     } else {
       return (
-        <div className="modal">
-          <form className="modal-content" onSubmit={this.handleSubmit}>
+        <div className="food-modal">
+          <form className="food-modal-content" onSubmit={this.handleSubmit}>
             <input type="text" className="foodName" name='name' onChange={this.handleChange} required />
             <input type="url" className="foodUrl" name='picture' onChange={this.handleChange} required />
-            <button type="submit" className="modal-button" onClick={(e) => { this.handleSubmit(e) }}>Go shop!</button>
+            <button type="submit" className="food-modal-button" onClick={(e) => { this.handleSubmit(e) }}>Go shop!</button>
           </form>
         </div>
       )
