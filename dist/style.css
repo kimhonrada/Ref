@@ -90,8 +90,14 @@ body {
 }
 
 .iPad {
-  height: 100px;
-  width: 90px;
+  background-image: url("assets/ipad-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  height: 150px;
+  width: 120px;
   z-index: 2;
   position: absolute;
   margin-top: 170px;
