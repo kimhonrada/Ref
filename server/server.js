@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const port = 3000;
-const { getFood, addFood, eatFood } = require("../database/index.js");
+const { getFood, addFood, eatFood, addUser } = require("../database/index.js");
 
 app.listen(port, () => {
   console.log(`Listening at port ${port}`);
@@ -46,4 +46,10 @@ app.delete("/food", (req, res) => {
     .catch((err) => {
       res.status(500).send("cant eat it sorry");
     });
+});
+
+// add user
+app.post("/user", (req, res) => {
+  addUser(req.body);
+  res.send("yessssss");
 });

@@ -11,7 +11,7 @@
   /*Speed of the Door animation*/
   transition: all 0.8s ease-in-out;
 
-  background-image: url("assets/fridgeDoor.png");
+  background-image: url("fridgeDoor.png");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -32,7 +32,7 @@
   transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
     rotateY(-105deg);
 
-  background-image: url("assets/fridgeDoor.png");
+  background-image: url("fridgeDoor.png");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -47,7 +47,7 @@
   margin: 0 auto;
   margin-top: 50px;
 
-  background-image: url("assets/fridgeBody.png");
+  background-image: url("fridgeBody.png");
   background-position: center;
   background-repeat: no-repeat;
 
