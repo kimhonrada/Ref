@@ -54,7 +54,7 @@ class App extends React.Component {
         <button className="iPad" alt='sign me up' onClick={this.goSignup}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
-        <PlayerModal ipad={this.state.ipad} />
+        <PlayerModal ipad={this.state.ipad} shutdown={this.goSignup} />
       </React.Fragment>
     )
   }

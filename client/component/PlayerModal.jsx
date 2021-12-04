@@ -14,21 +14,18 @@ class PlayerModal extends React.Component {
 
   addPlayer() {
     console.log('yes boi')
-    // // this.props.closeList();
-    // axios.post('/player', {
-    //   name: this.state.player,
-    // })
-    //   .then((result) => {
-    //     console.log('success posting')
-    //     this.setState({
-    //       player: null,
-    //     })
-    //   }).catch((err) => {
-    //     alert(`dang! check yo fridge first pls.`)
-    //     this.setState({
-    //       player: null
-    //     })
-    //   });
+    axios.post('/player', {
+      name: this.state.player,
+    })
+      .then((result) => {
+        this.props.shutdown();
+      }).catch((err) => {
+        alert(`nope, that name taken already`)
+        this.setState({
+          player: null
+        })
+        this.props.shutdown();
+      });
   }
 
   handleSubmit(e) {
