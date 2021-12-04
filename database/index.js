@@ -44,7 +44,6 @@ const eatFood = ({ name }) => {
 };
 
 const addPlayer = ({ name }) => {
-  console.log(name);
   if (name === null) {
     return new Promise((resolve, reject) => {
       throw new Error();

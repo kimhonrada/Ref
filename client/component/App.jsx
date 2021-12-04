@@ -11,14 +11,20 @@ class App extends React.Component {
       food: [],
       show: false,
       ipad: false,
+      mainPlayer: ''
     }
     this.getFood = this.getFood.bind(this);
     this.goShop = this.goShop.bind(this);
     this.goSignup = this.goSignup.bind(this);
+    this.setMainPlayer = this.setMainPlayer.bind(this);
   }
 
   componentDidMount() {
     // this.getFood();
+  }
+
+  setMainPlayer(incomingPlayer) {
+    this.setState({ mainPlayer: incomingPlayer })
   }
 
   getFood() {
@@ -51,7 +57,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
-        <button className="iPad" alt='sign me up' onClick={this.goSignup}></button>
+        <button className="iPad" alt='ipad' onClick={this.goSignup}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
         <PlayerModal ipad={this.state.ipad} shutdown={this.goSignup} />
