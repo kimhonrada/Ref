@@ -40,7 +40,7 @@ class PlayerModal extends React.Component {
   }
 
   render() {
-    if (!this.props.show) {
+    if (!this.props.ipad) {
       return null
     } else {
       return (

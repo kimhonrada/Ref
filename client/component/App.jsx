@@ -9,10 +9,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       food: [],
-      show: false
+      show: false,
+      ipad: false,
     }
     this.getFood = this.getFood.bind(this);
     this.goShop = this.goShop.bind(this);
+    this.goSignup = this.goSignup.bind(this);
   }
 
   componentDidMount() {
@@ -36,15 +38,23 @@ class App extends React.Component {
     }
   }
 
+  goSignup() {
+    if (!this.state.ipad) {
+      this.setState({ ipad: true })
+    } else {
+      this.setState({ ipad: false })
+    }
+  }
+
 
   render() {
     return (
       <React.Fragment>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
-        <button className="iPad" alt='sign me up' onClick={() => console.log('ipad')}></button>
+        <button className="iPad" alt='sign me up' onClick={this.goSignup}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
-        <PlayerModal />
+        <PlayerModal ipad={this.state.ipad} />
       </React.Fragment>
     )
   }
