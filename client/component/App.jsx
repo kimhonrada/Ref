@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Fridge from './Fridge.jsx';
 import FoodModal from './FoodModal.jsx';
+import PlayerModal from './PlayerModal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,8 +41,10 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
+        <button className="iPad" alt='sign me up' onClick={() => console.log('ipad')}> SIGN ME UP</button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
+        <PlayerModal />
       </React.Fragment>
     )
   }
