@@ -29,6 +29,7 @@ app.get("/food", (req, res) => {
 app.post("/food", (req, res) => {
   addFood(req.body)
     .then((result) => {
+      console.log(result);
       res.status(201).send("got it");
     })
     .catch((err) => {

@@ -19,9 +19,10 @@ const getFood = () => {
 };
 
 const addFood = ({ name, picture }) => {
-  console.log(name, picture);
   if (name === null || picture === null) {
-    return;
+    return new Promise((resolve, reject) => {
+      throw new Error();
+    });
   }
   return pool.query(
     `INSERT INTO
