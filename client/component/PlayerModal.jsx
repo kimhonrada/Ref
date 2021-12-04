@@ -13,21 +13,22 @@ class PlayerModal extends React.Component {
   }
 
   addPlayer() {
-    // this.props.closeList();
-    axios.post('/player', {
-      name: this.state.player,
-    })
-      .then((result) => {
-        console.log('success posting')
-        this.setState({
-          player: null,
-        })
-      }).catch((err) => {
-        alert(`dang! check yo fridge first pls.`)
-        this.setState({
-          player: null
-        })
-      });
+    console.log('yes boi')
+    // // this.props.closeList();
+    // axios.post('/player', {
+    //   name: this.state.player,
+    // })
+    //   .then((result) => {
+    //     console.log('success posting')
+    //     this.setState({
+    //       player: null,
+    //     })
+    //   }).catch((err) => {
+    //     alert(`dang! check yo fridge first pls.`)
+    //     this.setState({
+    //       player: null
+    //     })
+    //   });
   }
 
   handleSubmit(e) {
@@ -47,7 +48,7 @@ class PlayerModal extends React.Component {
         <div className="player-modal">
           <form className="player-modal-content" onSubmit={this.handleSubmit}>
             <input type="text" className="playerName" name='player' onChange={this.handleChange} required />
-            <button type="submit" className="player-modal-button" onClick={(e) => { this.handleSubmit(e) }}>Sign up!</button>
+            <button type="submit" className="player-modal-button" onClick={(e) => { this.handleSubmit(e) }}>lets go!</button>
           </form>
         </div>
       )
