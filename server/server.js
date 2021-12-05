@@ -6,7 +6,8 @@ const {
   getFood,
   addFood,
   eatFood,
-  addPlayer,
+  loginPlayer,
+  updatePoints,
 } = require("../database/index.js");
 
 app.listen(port, () => {
@@ -53,13 +54,24 @@ app.delete("/food", (req, res) => {
     });
 });
 
-// add player
+// loginPlayer
 app.post("/player", (req, res) => {
-  addPlayer(req.body)
+  loginPlayer(req.body)
     .then((result) => {
-      res.status(201).send(result.rows[0]);
+      res.status(200).send(result.rows[0]);
     })
     .catch((err) => {
-      res.status(500).send("cant do that my g, sorry");
+      res.status(500).send(err);
+    });
+});
+
+// update score
+app.put("/player", (req, res) => {
+  updatePoints(req.body)
+    .then((result) => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      res.status(500).send();
     });
 });

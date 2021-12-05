@@ -13,12 +13,12 @@ class App extends React.Component {
       show: false,
       ipad: false,
       gamepad: false,
-      mainPlayer: 'kim',
+      mainPlayer: '',
       points: 0,
     }
     this.getFood = this.getFood.bind(this);
     this.goShop = this.goShop.bind(this);
-    this.goSignup = this.goSignup.bind(this);
+    this.goLogin = this.goLogin.bind(this);
     this.goPlay = this.goPlay.bind(this);
     this.setMainPlayer = this.setMainPlayer.bind(this);
     this.setPoints = this.setPoints.bind(this);
@@ -37,7 +37,20 @@ class App extends React.Component {
   }
 
   setPoints(newPoints) {
-    this.setState({ points: this.state.points + newPoints })
+    if (newPoints) {
+      this.setState({ points: this.state.points + newPoints })
+      setTimeout(() => {
+        axios.put("/player", {
+          name: this.state.mainPlayer,
+          points: this.state.points
+        })
+          .then((result) => {
+            console.log('points updated')
+          }).catch((err) => {
+            console.log(err)
+          });
+      }, 1000)
+    }
   }
 
   getFood() {
@@ -57,7 +70,7 @@ class App extends React.Component {
     }
   }
 
-  goSignup() {
+  goLogin() {
     if (!this.state.ipad) {
       this.setState({ ipad: true })
     } else {
@@ -75,7 +88,7 @@ class App extends React.Component {
 
   whatIpadDo() {
     if (this.state.mainPlayer === '') {
-      this.goSignup();
+      this.goLogin();
     } else {
       this.goPlay();
     }
@@ -88,10 +101,11 @@ class App extends React.Component {
           <h3 className="score">{this.state.points}</h3>
         </div>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
+        <button className="go-signup"> sign me up</button>
         <button className="iPad" alt='ipad' onClick={this.whatIpadDo}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
-        <PlayerModal setMainPlayer={this.setMainPlayer} ipad={this.state.ipad} shutdown={this.goSignup} />
+        <PlayerModal setMainPlayer={this.setMainPlayer} ipad={this.state.ipad} shutdown={this.goLogin} />
         <GameModal points={this.setPoints} food={this.state.food} gamepad={this.state.gamepad} shutdown={this.goPlay} />
       </React.Fragment>
     )

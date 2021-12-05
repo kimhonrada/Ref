@@ -7,7 +7,7 @@ body {
 
 body {
   background-image: aqua;
-  background-image: url("assets/kitchen.png");
+  background-image: url("assets/kitchen2.png");
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -89,6 +89,20 @@ body {
   margin-left: 1400px;
 }
 
+.go-signup {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: transparent;
+  height: 75px;
+  width: 75px;
+  border: green 5px solid;
+  z-index: 2;
+  position: absolute;
+  margin-top: 575px;
+  margin-left: 200px;
+}
+
 .iPad {
   background-image: url("assets/ipad-button.png");
   background-repeat: no-repeat;
@@ -146,7 +160,7 @@ body {
   height: 600px;
   width: 600px;
   bottom: 0;
-  background-image: url("assets/ipad-signup.png");
+  background-image: url("assets/ipad-login.png");
   background-position: center;
   background-repeat: no-repeat;
 }

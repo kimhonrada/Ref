@@ -7,12 +7,12 @@ class PlayerModal extends React.Component {
     this.state = {
       player: null
     }
-    this.addPlayer = this.addPlayer.bind(this);
+    this.loginPlayer = this.loginPlayer.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  addPlayer() {
+  loginPlayer() {
     axios.post('/player', {
       name: this.state.player,
     })
@@ -20,7 +20,7 @@ class PlayerModal extends React.Component {
         this.props.setMainPlayer(result)
         this.props.shutdown();
       }).catch((err) => {
-        alert(`nah, dude. stop.`)
+        alert(`sorry, i cant find u in the system my g. gotta sign up first`)
         this.setState({
           player: null
         })
@@ -30,7 +30,7 @@ class PlayerModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.addPlayer()
+    this.loginPlayer()
   }
 
   handleChange(e) {

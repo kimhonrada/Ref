@@ -43,7 +43,38 @@ const eatFood = ({ name }) => {
   );
 };
 
-const addPlayer = ({ name }) => {
+const loginPlayer = ({ name }) => {
+  if (name === null) {
+    return new Promise((resolve, reject) => {
+      throw new Error();
+    });
+  } else {
+    return pool.query(`SELECT * FROM player where name='${name}'`);
+  }
+};
+
+const updatePoints = ({ name, points }) => {
+  return pool.query(
+    `UPDATE
+      player
+    SET
+      points=${points}
+    WHERE
+      name='${name}'
+      `
+  );
+};
+
+module.exports = {
+  getFood,
+  addFood,
+  eatFood,
+  loginPlayer,
+  updatePoints,
+};
+
+/*
+const loginPlayer = ({ name }) => {
   if (name === null) {
     return new Promise((resolve, reject) => {
       throw new Error();
@@ -60,9 +91,4 @@ const addPlayer = ({ name }) => {
   }
 };
 
-module.exports = {
-  getFood,
-  addFood,
-  eatFood,
-  addPlayer,
-};
+*/

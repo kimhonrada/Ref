@@ -28,6 +28,7 @@ class GameModal extends React.Component {
 
     this.props.points(counter)
     this.props.shutdown();
+
     this.setState({
       guessOne: '',
       guessTwo: '',
