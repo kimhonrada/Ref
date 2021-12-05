@@ -66,7 +66,6 @@ class App extends React.Component {
   }
 
   goPlay() {
-    console.log('this is play')
     if (!this.state.gamepad) {
       this.setState({ gamepad: true })
     } else {
@@ -85,6 +84,9 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div className="scoreBoard">
+          <h3 className="score">{this.state.points}</h3>
+        </div>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
         <button className="iPad" alt='ipad' onClick={this.whatIpadDo}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />

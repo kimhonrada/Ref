@@ -104,6 +104,30 @@ body {
   margin-left: 500px;
 }
 
+.scoreBoard {
+  background-image: url("assets/blackboard.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: transparent;
+  border: 0px none;
+  height: 270px;
+  width: 270px;
+  z-index: 2;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 1425px;
+}
+
+.score {
+  background-color: transparent;
+  margin-left: 100px;
+  margin-top: 100px;
+  font-size: 69px;
+  stroke: 1px gray solid;
+  color: whitesmoke;
+}
+
 .player-modal {
   position: absolute;
   left: 0;
