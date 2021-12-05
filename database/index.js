@@ -54,6 +54,7 @@ const addPlayer = ({ name }) => {
         player(name)
        VALUES
         ('${name}')
+        RETURNING name, points
       `
     );
   }
