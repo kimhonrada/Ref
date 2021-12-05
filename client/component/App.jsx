@@ -12,12 +12,16 @@ class App extends React.Component {
       food: [],
       show: false,
       ipad: false,
-      mainPlayer: ''
+      gamepad: false,
+      mainPlayer: '',
+      points: 0,
     }
     this.getFood = this.getFood.bind(this);
     this.goShop = this.goShop.bind(this);
     this.goSignup = this.goSignup.bind(this);
+    this.goPlay = this.goPlay.bind(this);
     this.setMainPlayer = this.setMainPlayer.bind(this);
+    this.whatIpadDo = this.whatIpadDo.bind(this);
   }
 
   componentDidMount() {
@@ -25,7 +29,11 @@ class App extends React.Component {
   }
 
   setMainPlayer(incomingPlayer) {
-    this.setState({ mainPlayer: incomingPlayer })
+    console.log(incomingPlayer.data.name)
+    this.setState({
+      mainPlayer: incomingPlayer.data.name,
+      points: incomingPlayer.data.points
+    })
   }
 
   getFood() {
@@ -53,18 +61,36 @@ class App extends React.Component {
     }
   }
 
+  goPlay() {
+    console.log('this is play')
+    if (!this.state.gamepad) {
+      this.setState({ gamepad: true })
+    } else {
+      this.setState({ gamepad: false })
+    }
+  }
+
+  whatIpadDo() {
+    if (this.state.mainPlayer === '') {
+      this.goSignup();
+    } else {
+      this.goPlay();
+    }
+  }
 
   render() {
     return (
       <React.Fragment>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
-        <button className="iPad" alt='ipad' onClick={this.goSignup}></button>
+        <button className="iPad" alt='ipad' onClick={this.whatIpadDo}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
-        {this.state.mainPlayer === '' ? <PlayerModal setMainPlayer={this.setMainPlayer} ipad={this.state.ipad} shutdown={this.goSignup} /> : <GameModal />}
+        <PlayerModal setMainPlayer={this.setMainPlayer} ipad={this.state.ipad} shutdown={this.goSignup} />
+        <GameModal gamepad={this.state.gamepad} shutdown={this.goPlay} />
       </React.Fragment>
     )
   }
 }
+
 
 export default App;
