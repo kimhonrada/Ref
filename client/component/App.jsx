@@ -4,6 +4,7 @@ import Fridge from './Fridge.jsx';
 import FoodModal from './FoodModal.jsx';
 import PlayerModal from './PlayerModal.jsx';
 import GameModal from './GameModal.jsx';
+import SignupModal from './SignupModal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends React.Component {
       show: false,
       ipad: false,
       gamepad: false,
+      signup: false,
       mainPlayer: '',
       points: 0,
     }
@@ -20,6 +22,7 @@ class App extends React.Component {
     this.goShop = this.goShop.bind(this);
     this.goLogin = this.goLogin.bind(this);
     this.goPlay = this.goPlay.bind(this);
+    this.goSignup = this.goSignup.bind(this);
     this.setMainPlayer = this.setMainPlayer.bind(this);
     this.setPoints = this.setPoints.bind(this);
     this.whatIpadDo = this.whatIpadDo.bind(this);
@@ -70,6 +73,14 @@ class App extends React.Component {
     }
   }
 
+  goSignup() {
+    if (!this.state.signup) {
+      this.setState({ signup: true })
+    } else {
+      this.setState({ signup: false })
+    }
+  }
+
   goLogin() {
     if (!this.state.ipad) {
       this.setState({ ipad: true })
@@ -101,12 +112,13 @@ class App extends React.Component {
           <h3 className="score">{this.state.points}</h3>
         </div>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
-        <button className="go-signup"> sign me up</button>
+        <button className="go-signup" onClick={this.goSignup}> sign me up</button>
         <button className="iPad" alt='ipad' onClick={this.whatIpadDo}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
         <PlayerModal setMainPlayer={this.setMainPlayer} ipad={this.state.ipad} shutdown={this.goLogin} />
         <GameModal points={this.setPoints} food={this.state.food} gamepad={this.state.gamepad} shutdown={this.goPlay} />
+        <SignupModal signup={this.state.signup} shutdown={this.goSignup} />
       </React.Fragment>
     )
   }
