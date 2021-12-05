@@ -112,7 +112,7 @@ class App extends React.Component {
           <h3 className="score">{this.state.points}</h3>
         </div>
         <button className="go-shopping" onClick={this.goShop} alt='lets go shopping!'></button>
-        <button className="go-signup" onClick={this.goSignup}> sign me up</button>
+        <button className="go-signup" onClick={this.goSignup} alt='sign me up'></button>
         <button className="iPad" alt='ipad' onClick={this.whatIpadDo}></button>
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
