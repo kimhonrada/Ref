@@ -17,6 +17,7 @@ class PlayerModal extends React.Component {
       name: this.state.player,
     })
       .then((result) => {
+        this.props.setMainPlayer(this.state.player)
         this.props.shutdown();
       }).catch((err) => {
         alert(`nah, dude. stop.`)
