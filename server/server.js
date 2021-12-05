@@ -55,8 +55,8 @@ app.delete("/food", (req, res) => {
 });
 
 // loginPlayer
-app.post("/player", (req, res) => {
-  loginPlayer(req.body)
+app.get("/player", (req, res) => {
+  loginPlayer(req.query)
     .then((result) => {
       res.status(200).send(result.rows[0]);
     })

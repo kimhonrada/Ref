@@ -13,8 +13,10 @@ class PlayerModal extends React.Component {
   }
 
   loginPlayer() {
-    axios.post('/player', {
-      name: this.state.player,
+    axios.get('/player', {
+      params: {
+        name: this.state.player,
+      }
     })
       .then((result) => {
         this.props.setMainPlayer(result)
