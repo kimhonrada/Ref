@@ -13,7 +13,7 @@ class App extends React.Component {
       show: false,
       ipad: false,
       gamepad: false,
-      mainPlayer: '',
+      mainPlayer: 'kim',
       points: 0,
     }
     this.getFood = this.getFood.bind(this);
@@ -21,6 +21,7 @@ class App extends React.Component {
     this.goSignup = this.goSignup.bind(this);
     this.goPlay = this.goPlay.bind(this);
     this.setMainPlayer = this.setMainPlayer.bind(this);
+    this.setPoints = this.setPoints.bind(this);
     this.whatIpadDo = this.whatIpadDo.bind(this);
   }
 
@@ -29,11 +30,14 @@ class App extends React.Component {
   }
 
   setMainPlayer(incomingPlayer) {
-    console.log(incomingPlayer.data.name)
     this.setState({
       mainPlayer: incomingPlayer.data.name,
       points: incomingPlayer.data.points
     })
+  }
+
+  setPoints(newPoints) {
+    this.setState({ points: this.state.points + newPoints })
   }
 
   getFood() {
@@ -86,7 +90,7 @@ class App extends React.Component {
         <Fridge getFood={this.getFood} food={this.state.food} />
         <FoodModal show={this.state.show} closeList={this.goShop} />
         <PlayerModal setMainPlayer={this.setMainPlayer} ipad={this.state.ipad} shutdown={this.goSignup} />
-        <GameModal gamepad={this.state.gamepad} shutdown={this.goPlay} />
+        <GameModal points={this.setPoints} food={this.state.food} gamepad={this.state.gamepad} shutdown={this.goPlay} />
       </React.Fragment>
     )
   }

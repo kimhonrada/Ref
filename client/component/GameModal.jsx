@@ -5,33 +5,34 @@ class GameModal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      player: null
+      guessOne: '',
+      guessTwo: '',
+      guessThree: ''
     }
-    // this.addPlayer = this.addPlayer.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // addPlayer() {
-  //   axios.post('/player', {
-  //     name: this.state.player,
-  //   })
-  //     .then((result) => {
-  //       console.log(result)
-  //       // this.props.setMainPlayer(result)
-  //       this.props.shutdown();
-  //     }).catch((err) => {
-  //       alert(`nah, dude. stop.`)
-  //       this.setState({
-  //         player: null
-  //       })
-  //       this.props.shutdown();
-  //     });
-  // }
+  playBall(guessObj) {
+    let answers = Object.values(guessObj)
+    let foodArray = []
+    let counter = 0;
+
+    let rightAnswers = this.props.food.map((food) => {
+      foodArray.push(food.name)
+    });
+
+    answers.forEach((answer) => {
+      foodArray.includes(answer) ? counter++ : counter
+    })
+
+    this.props.points(counter)
+    this.props.shutdown();
+  }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.addPlayer()
+    this.playBall(this.state)
   }
 
   handleChange(e) {
@@ -45,8 +46,10 @@ class GameModal extends React.Component {
       return (
         <div className="game-modal">
           <form className="game-modal-content" onSubmit={this.handleSubmit}>
-            <input type="text" className="gameName" name='player' onChange={this.handleChange} required />
-            <button type="submit" className="game-modal-button" onClick={(e) => { this.handleSubmit(e) }}>Start this game!</button>
+            <input type="text" className="guessbox1" name='guessOne' onChange={this.handleChange} required />
+            <input type="text" className="guessbox2" name='guessTwo' onChange={this.handleChange} required />
+            <input type="text" className="guessbox3" name='guessThree' onChange={this.handleChange} required />
+            <button type="submit" className="game-modal-button" onClick={(e) => { this.handleSubmit(e) }}>Play!</button>
           </form>
         </div>
       )
