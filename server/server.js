@@ -54,7 +54,7 @@ app.delete("/food", (req, res) => {
     });
 });
 
-// loginPlayer
+// login player
 app.get("/player", (req, res) => {
   loginPlayer(req.query)
     .then((result) => {
@@ -63,6 +63,12 @@ app.get("/player", (req, res) => {
     .catch((err) => {
       res.status(500).send(err);
     });
+});
+
+// add player
+app.post("/player", (req, res) => {
+  console.log(req.body);
+  res.send("");
 });
 
 // update score
