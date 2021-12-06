@@ -53,6 +53,22 @@ const loginPlayer = ({ name }) => {
   }
 };
 
+const addPlayer = ({ playerToAdd }) => {
+  if (playerToAdd === null) {
+    return new Promise((resolve, reject) => {
+      throw new Error();
+    });
+  } else {
+    return pool.query(
+      `INSERT INTO
+        player(name)
+       VALUES
+        ('${playerToAdd}')
+      `
+    );
+  }
+};
+
 const updatePoints = ({ name, points }) => {
   return pool.query(
     `UPDATE
@@ -70,6 +86,7 @@ module.exports = {
   addFood,
   eatFood,
   loginPlayer,
+  addPlayer,
   updatePoints,
 };
 

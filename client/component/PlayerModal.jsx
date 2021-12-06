@@ -19,9 +19,16 @@ class PlayerModal extends React.Component {
       }
     })
       .then((result) => {
-        this.props.setMainPlayer(result)
+        console.log('this is result ', result)
+        if (result.data === '') {
+          alert(`sorry, i cant find u in the system my g. gotta sign up first`)
+        } else {
+          this.setState({ player: result.data.name })
+          this.props.setMainPlayer(result)
+        }
         this.props.shutdown();
       }).catch((err) => {
+        console.log(err)
         alert(`sorry, i cant find u in the system my g. gotta sign up first`)
         this.setState({
           player: null
@@ -47,7 +54,7 @@ class PlayerModal extends React.Component {
         <div className="player-modal">
           <form className="player-modal-content" onSubmit={this.handleSubmit}>
             <input type="text" className="playerName" name='player' onChange={this.handleChange} required />
-            <button type="submit" className="player-modal-button" onClick={(e) => { this.handleSubmit(e) }}>lets go!</button>
+            <button disabled={this.state.player === null} type="submit" className="player-modal-button" onClick={(e) => { this.handleSubmit(e) }}>lets go!</button>
           </form>
         </div>
       )

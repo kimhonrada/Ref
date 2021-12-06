@@ -8,6 +8,7 @@ const {
   eatFood,
   loginPlayer,
   updatePoints,
+  addPlayer,
 } = require("../database/index.js");
 
 app.listen(port, () => {
@@ -67,8 +68,13 @@ app.get("/player", (req, res) => {
 
 // add player
 app.post("/player", (req, res) => {
-  console.log(req.body);
-  res.send("");
+  addPlayer(req.body)
+    .then((result) => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      res.status(500).send();
+    });
 });
 
 // update score
