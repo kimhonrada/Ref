@@ -1,7 +1,5 @@
-# README.md
-
-# MVP
-
+# Ref
+A full-stack refrigerator simulation game.
 ## Technologies
 
 - React
