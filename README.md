@@ -21,7 +21,7 @@ cd Ref
 npm install
 ```
 
-## Feature
+## Features
 
 The fridge stocks new, random food, based from the database, everytime the door is closed
 
