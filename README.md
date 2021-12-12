@@ -1,6 +1,6 @@
-# hr-rfe6-mvp
+# Ref
 
-# MVP
+A full-stack refrigerator simulation game.
 
 ## Technologies
 
@@ -8,4 +8,15 @@
 - Express
 - Nodejs
 - PostgreSQL
-- Webpack
+
+## Installation
+
+Install [PostgreSQL](https://www.postgresql.org/download/)
+
+```
+git clone https://github.com/kimhonrada/Ref
+
+cd Ref
+
+npm install
+```

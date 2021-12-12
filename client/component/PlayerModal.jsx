@@ -19,7 +19,6 @@ class PlayerModal extends React.Component {
       }
     })
       .then((result) => {
-        console.log('this is result ', result)
         if (result.data === '') {
           alert(`sorry, i cant find u in the system my g. gotta sign up first`)
         } else {
