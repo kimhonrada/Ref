@@ -1,7 +1,11 @@
 # Ref
+<<<<<<< HEAD
 
 A full-stack refrigerator simulation game.
 
+=======
+A full-stack refrigerator simulation game.
+>>>>>>> 7d78a7cfecb72d7aeec2af2aee604773550d02a2
 ## Technologies
 
 - React
