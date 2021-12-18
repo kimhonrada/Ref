@@ -25,8 +25,6 @@ npm install
 
 The fridge stocks new, random food, based from the database, everytime the door is closed
 
-![alt text](https://thumbs.gfycat.com/ReliableWavyBarasingha-size_restricted.gif)
-
 ![alt text](gif/Ref_Fridge.gif)
 
 User can add food to the database using a custom modal. User can include the name, and the image url of the food. Image upload will be supported on future updates
