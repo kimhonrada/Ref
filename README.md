@@ -34,3 +34,7 @@ User can add food to the database using a custom modal. User can include the nam
 Included a minigame where a user can guess what is inside the fridge and earn points. Added a simple login feature, to retrieve current points base on username
 
 ![alt text](gif/Ref_minigame.gif)
+
+
+
+![](https://thumbs.gfycat.com/ReliableWavyBarasingha-size_restricted.gif)
