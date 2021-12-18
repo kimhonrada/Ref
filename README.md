@@ -35,6 +35,3 @@ Included a minigame where a user can guess what is inside the fridge and earn po
 
 ![alt text](gif/Ref_minigame.gif)
 
-
-
-![](https://thumbs.gfycat.com/ReliableWavyBarasingha-size_restricted.gif)
